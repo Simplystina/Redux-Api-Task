@@ -41,4 +41,3 @@ const covidDataSlice = createSlice({
 })
 
 export default covidDataSlice.reducer
-export const {  } = covidDataSlice.actions
