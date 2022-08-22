@@ -1,4 +1,4 @@
-# This repo contains the code for the Secpnd Frontend Task
+# This repo contains the code for the Second Frontend Task
 
 I used the react-redux, redux toolkit and createAsyncThunk libraries to read data from the provided api.
 
