@@ -40,3 +40,15 @@ code {
   background-color: #04AA6D;
   color: white;
 }
+.btn{
+  background-color: green;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+h2{
+  font-size: 20px;
+  letter-spacing: 1px;
+}

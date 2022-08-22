@@ -5,7 +5,7 @@ import { getData } from './features/dataSlice'
 const App = () => {
 
    const dispatch = useDispatch()
-   const {isLoading, data} = useSelector((state) =>state.covidData);
+   const {data} = useSelector((state) =>state.covidData);
   const getCovidData = ()=>{
       dispatch(getData())
   }
@@ -27,14 +27,16 @@ const App = () => {
            </div>
            {data &&  <table id="data">
             <tr>
+              <th>State</th>
               <th>Cases on Admission</th>
               <th>Confirmed cases</th>
               <th>Discharged</th>
               <th>Death</th>
             </tr>
-            {data?.states?.map((state)=>{
-              const {casesOnAdmission, confirmedCases,discharged, death} = state
+            {data?.states?.map((item)=>{
+              const {state, casesOnAdmission, confirmedCases,discharged, death} = item
               return <tr>
+                    <td>{state}</td>
                    <td>{casesOnAdmission}</td>
                     <td>{confirmedCases}</td>
                    <td>{discharged}</td>
