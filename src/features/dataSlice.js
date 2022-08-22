@@ -11,8 +11,8 @@ export const getData = createAsyncThunk(
     async( thunkAPI )=>{ 
         try {
             const resp = await axios.get('https://covidnigeria.herokuapp.com/api')
-            console.log(resp?.data?.data, "resp")
-            return resp?.data?.data
+           // console.log(resp?.data?.data, "resp")
+            return resp?.data
         } catch (error) {
             return thunkAPI.rejectWithValue(error.response.data.msg)
         }
@@ -30,7 +30,8 @@ const covidDataSlice = createSlice({
         },
         [getData.fulfilled]: (state, {payload})=>{
             state.isLoading = false
-            state.data = payload.results
+            
+            state.data = payload.data
         },
         [getData.rejected]: (state)=>{
             state.isLoading = false
